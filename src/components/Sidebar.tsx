@@ -3,7 +3,7 @@ import UserItem from "./UserItem";
 // "use client"
 const Sidebar = () => {
     return (
-        <div className="flex flex-col w-[300px] min-w-[300px] border-r min-h-screen bg-red-100 p-4">
+        <div className="flex flex-col w-[300px] min-w-[300px] border-r min-h-screen p-4">
             {/* User Item */}
             <div>
                 <UserItem />
