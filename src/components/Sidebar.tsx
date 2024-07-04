@@ -13,6 +13,44 @@ import {
   } from "@/components/ui/command"
   
 const Sidebar = () => {
+
+    const menuList = [
+        {
+            group: "General",
+            items: [
+                {
+                    link: "/",
+                    text: "Profile"
+                },
+                {
+                    link: "/",
+                    text: "Billing"
+                },
+                {
+                    link: "/",
+                    text: "Notification"
+                },
+            ]
+        },
+        {
+            group: "Settings",
+            items: [
+                {
+                    link: "/",
+                    text: "General Settings"
+                },
+                {
+                    link: "/",
+                    text: "Privacy"
+                },
+                {
+                    link: "/",
+                    text: "Log"
+                },
+            ]
+        }
+    ]
+    
     return (
         <div className="flex flex-col gap-4 w-[300px] min-w-[300px] border-r min-h-screen p-4">
             {/* User Item */}
@@ -23,7 +61,6 @@ const Sidebar = () => {
             {/* Menu */}
             <div className="grow">
                 <Command>
-                    <CommandInput placeholder="Type a command or search..." />
                     <CommandList>
                         <CommandEmpty>No results found.</CommandEmpty>
                         <CommandGroup heading="Suggestions">
