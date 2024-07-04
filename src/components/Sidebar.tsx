@@ -62,18 +62,13 @@ const Sidebar = () => {
             <div className="grow">
                 <Command>
                     <CommandList>
-                        <CommandEmpty>No results found.</CommandEmpty>
-                        <CommandGroup heading="Suggestions">
-                            <CommandItem>Calendar</CommandItem>
-                            <CommandItem>Search Emoji</CommandItem>
-                            <CommandItem>Calculator</CommandItem>
+                        {menuList.map((menu:any, key:number)=> (
+                            <CommandGroup key={key} heading={menu.group}>
+                            {menu.items.map((option: any, optionKey: number)=> (
+                                <CommandItem key={optionKey}>{option.text}</CommandItem>
+                            ))}
                         </CommandGroup>
-                        <CommandSeparator />
-                        <CommandGroup heading="Settings">
-                            <CommandItem>Profile</CommandItem>
-                            <CommandItem>Billing</CommandItem>
-                            <CommandItem>Settings</CommandItem>
-                        </CommandGroup>
+                        ))}
                     </CommandList>
                 </Command>
             </div>
