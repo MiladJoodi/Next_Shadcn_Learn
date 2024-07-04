@@ -1,8 +1,9 @@
+import { CommandDemo } from "./Command";
 
 const Header = () => {
     return (
-        <div className="flex gap-4 border-r min-h-screen p-4 border-b">
-            Header
+        <div className="flex gap-4 p-4 border-b">
+            <CommandDemo />
         </div>
     );
 }
