@@ -72,12 +72,12 @@ const Sidebar = () => {
 
             {/* Menu */}
             <div className="grow">
-                <Command>
-                    <CommandList>
+                <Command style={{overflow: "visible"}}>
+                    <CommandList style={{overflow: "visible"}}>
                         {menuList.map((menu:any, key:number)=> (
                             <CommandGroup key={key} heading={menu.group}>
                             {menu.items.map((option: any, optionKey: number)=> (
-                                <CommandItem key={optionKey} className="flex gap-2">
+                                <CommandItem key={optionKey} className="flex gap-2 cursor-pointer">
                                     {option.icon}
                                     {option.text}
                                     </CommandItem>
