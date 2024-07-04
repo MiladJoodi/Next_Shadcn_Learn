@@ -29,13 +29,14 @@ const Header = () => {
     ])
 
     return (
-        <div className="grid grid-cols-2 gap-4 p-4 border-b">
+        <div className="w-full grid grid-cols-2 gap-4 p-4 border-b">
             <CommandDemo />
 
             <div className="flex items-center justify-end">
                 <DropdownMenu>
-                    <DropdownMenuTrigger>
-                        <Button variant="outline" size="icon">
+                    <DropdownMenuTrigger asChild>
+                        <Button className="relative" variant="outline" size="icon">
+                            <div className={`absolute -top-2 -right-1 h-3 w-3 rounded-full my-1 ${notifications.find((x:any)=> x.read === true) ? 'bg-green-500' : 'bg-neutral-200'}`}></div>
                             <BellIcon className="h-4 w-4" />
                         </Button>
                     </DropdownMenuTrigger>
