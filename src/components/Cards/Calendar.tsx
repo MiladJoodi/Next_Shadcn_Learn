@@ -1,5 +1,5 @@
 "use client"
-import { Card, CardContent } from '../ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import { ResponsiveTimeRange } from '@nivo/calendar'
 
 const MyResponsiveTimeRange = ({ data /* see data tab */ }: any) => (
@@ -41,7 +41,7 @@ const Calendar = () => {
             "value": 100,
             "day": "2018-05-28"
         },
-        
+
         {
             "value": 270,
             "day": "2018-09-28"
@@ -468,52 +468,52 @@ const Calendar = () => {
         },
 
 
-        
+
         {
             "value": 95,
             "day": "2018-12-04"
         },
-        
+
         {
             "value": 300,
             "day": "2018-12-05"
         },
-        
+
         {
             "value": 189,
             "day": "2018-12-06"
         },
-        
+
         {
             "value": 71,
             "day": "2018-12-07"
         },
-        
+
         {
             "value": 30,
             "day": "2018-12-08"
         },
-        
+
         {
             "value": 110,
             "day": "2018-12-09"
         },
-        
+
         {
             "value": 220,
             "day": "2018-12-10"
         },
-        
+
         {
             "value": 250,
             "day": "2018-12-11"
         },
-        
+
         {
             "value": 70,
             "day": "2018-12-12"
         },
-        
+
         {
             "value": 320,
             "day": "2018-12-13"
@@ -527,6 +527,10 @@ const Calendar = () => {
 
     return (
         <Card>
+            <CardHeader>
+                <CardTitle>Calendar</CardTitle>
+                <CardDescription>These are the results of this year</CardDescription>
+            </CardHeader>
             <CardContent className='h-[250px] flex items-center w-full'>
                 <MyResponsiveTimeRange data={data} />
             </CardContent>
