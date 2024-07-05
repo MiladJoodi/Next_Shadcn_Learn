@@ -9,7 +9,7 @@ const MyResponsiveTimeRange = ({ data /* see data tab */ }: any) => (
         to="2018-12-30"
         emptyColor="#eeeeee"
         colors={['#61cdbb', '#97e3d5', '#e8c1a0', '#f47560']}
-        margin={{ top: 40, right: 40, bottom: 100, left: 40 }}
+        // margin={{ top: 40, right: 40, bottom: 100, left: 40 }}
         dayBorderWidth={2}
         dayBorderColor="#ffffff"
         legends={[]}
