@@ -12,7 +12,7 @@ import {
     CardTitle
 } from "@/components/ui/card";
 
-const MyResponsiveBump = (props:any) => {
+const MyResponsiveBump = (props:null) => {
     return (
         <ResponsiveBump
         data={props.data}
