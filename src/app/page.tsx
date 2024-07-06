@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="grid gap-[32px]">
       <div className="grid grid-cols-2 gap-[32px]">
-        <General />
+        {/* <General /> */}
         <div className="grid gap-[32px]">
           <Calendar />
           <Calendar />
