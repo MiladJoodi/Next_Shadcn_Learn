@@ -82,7 +82,7 @@ const Sidebar = () => {
           description="johndoe@mail.com"
           shadow={false}
            style={{
-            border: '1px solid red'
+            border: '1px solid rgb(229,229,229)'
            }}
         />
       </div>
