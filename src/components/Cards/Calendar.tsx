@@ -531,7 +531,7 @@ const Calendar = () => {
                 <CardTitle>Calendar</CardTitle>
                 <CardDescription>These are the results of this year</CardDescription>
             </CardHeader>
-            <CardContent className='h-[250px] flex items-center w-full'>
+            <CardContent className='h-[100px] flex items-center w-full'>
                 <MyResponsiveTimeRange data={data} />
             </CardContent>
         </Card>

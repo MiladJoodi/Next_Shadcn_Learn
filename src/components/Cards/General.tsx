@@ -2,7 +2,7 @@
 
 // install (please try to align the version of installed @nivo packages)
 // yarn add @nivo/bump
-import { ResponsiveBump } from '@nivo/bump';
+import { ResponsiveLine } from '@nivo/line'
 
 import {
   Card,
@@ -19,349 +19,345 @@ import {
 // you'll often use just a few of them.
 const MyResponsiveBump = (props: any) => {
   return (
-    <ResponsiveBump
-    data={props.data}
-    colors={{ scheme: 'spectral' }}
-    lineWidth={3}
-    activeLineWidth={6}
-    inactiveLineWidth={3}
-    inactiveOpacity={0.15}
-    pointSize={10}
-    activePointSize={16}
-    inactivePointSize={0}
-    pointColor={{ theme: 'background' }}
-    pointBorderWidth={3}
-    activePointBorderWidth={3}
-    pointBorderColor={{ from: 'serie.color' }}
-    axisTop={{
-      tickSize: 5,
-      tickPadding: 5,
-      tickRotation: 0,
-      legend: '',
-      legendPosition: 'middle',
-      legendOffset: -36
-    }}
-    axisBottom={{
-      tickSize: 5,
-      tickPadding: 5,
-      tickRotation: 0,
-      legend: '',
-      legendPosition: 'middle',
-      legendOffset: 32
-    }}
-    axisLeft={{
-      tickSize: 5,
-      tickPadding: 5,
-      tickRotation: 0,
-      legend: 'ranking',
-      legendPosition: 'middle',
-      legendOffset: -40
-    }}
-    margin={{ top: 40, right: 100, bottom: 40, left: 60 }}
-    axisRight={null}
-  />
+    <ResponsiveLine
+        data={props.data}
+        margin={{ top: 10, right: 85, bottom: 25, left: 45 }}
+        xScale={{ type: 'point' }}
+        yScale={{
+            type: 'linear',
+            min: 'auto',
+            max: 'auto',
+            stacked: true,
+            reverse: false
+        }}
+        yFormat=" >-.2f"
+        axisTop={null}
+        axisRight={null}
+        axisBottom={{
+            tickSize: 5,
+            tickPadding: 5,
+            tickRotation: 0,
+            legend: 'transportation',
+            legendOffset: 36,
+            legendPosition: 'middle',
+            truncateTickAt: 0
+        }}
+        axisLeft={{
+            tickSize: 5,
+            tickPadding: 5,
+            tickRotation: 0,
+            legend: 'count',
+            legendOffset: -40,
+            legendPosition: 'middle',
+            truncateTickAt: 0
+        }}
+        pointSize={10}
+        pointColor={{ theme: 'background' }}
+        pointBorderWidth={2}
+        pointBorderColor={{ from: 'serieColor' }}
+        pointLabel="data.yFormatted"
+        pointLabelYOffset={-12}
+        enableTouchCrosshair={true}
+        useMesh={true}
+        legends={[
+            {
+                anchor: 'bottom-right',
+                direction: 'column',
+                justify: false,
+                translateX: 100,
+                translateY: 0,
+                itemsSpacing: 0,
+                itemDirection: 'left-to-right',
+                itemWidth: 80,
+                itemHeight: 20,
+                itemOpacity: 0.75,
+                symbolSize: 12,
+                symbolShape: 'circle',
+                symbolBorderColor: 'rgba(0, 0, 0, .5)',
+                effects: [
+                    {
+                        on: 'hover',
+                        style: {
+                            itemBackground: 'rgba(0, 0, 0, .03)',
+                            itemOpacity: 1
+                        }
+                    }
+                ]
+            }
+        ]}
+    />
   )
 }
 
 export default function General() {
   const data = [
     {
-      "id": "Serie 1",
+      "id": "japan",
+      "color": "hsl(277, 70%, 50%)",
       "data": [
         {
-          "x": 2000,
-          "y": 4
+          "x": "plane",
+          "y": 267
         },
         {
-          "x": 2001,
-          "y": 12
+          "x": "helicopter",
+          "y": 165
         },
         {
-          "x": 2002,
-          "y": 8
+          "x": "boat",
+          "y": 74
         },
         {
-          "x": 2003,
-          "y": 10
+          "x": "train",
+          "y": 55
         },
         {
-          "x": 2004,
-          "y": 5
-        }
-      ]
-    },
-    {
-      "id": "Serie 2",
-      "data": [
-        {
-          "x": 2000,
-          "y": 6
-        },
-        {
-          "x": 2001,
-          "y": 5
-        },
-        {
-          "x": 2002,
-          "y": 3
-        },
-        {
-          "x": 2003,
-          "y": 6
-        },
-        {
-          "x": 2004,
-          "y": 3
-        }
-      ]
-    },
-    {
-      "id": "Serie 3",
-      "data": [
-        {
-          "x": 2000,
-          "y": 2
-        },
-        {
-          "x": 2001,
-          "y": 7
-        },
-        {
-          "x": 2002,
-          "y": 9
-        },
-        {
-          "x": 2003,
-          "y": 9
-        },
-        {
-          "x": 2004,
-          "y": 8
-        }
-      ]
-    },
-    {
-      "id": "Serie 4",
-      "data": [
-        {
-          "x": 2000,
-          "y": 3
-        },
-        {
-          "x": 2001,
-          "y": 11
-        },
-        {
-          "x": 2002,
-          "y": 11
-        },
-        {
-          "x": 2003,
-          "y": 2
-        },
-        {
-          "x": 2004,
-          "y": 2
-        }
-      ]
-    },
-    {
-      "id": "Serie 5",
-      "data": [
-        {
-          "x": 2000,
-          "y": 5
-        },
-        {
-          "x": 2001,
-          "y": 3
-        },
-        {
-          "x": 2002,
-          "y": 12
-        },
-        {
-          "x": 2003,
-          "y": 4
-        },
-        {
-          "x": 2004,
-          "y": 9
-        }
-      ]
-    },
-    {
-      "id": "Serie 6",
-      "data": [
-        {
-          "x": 2000,
-          "y": 7
-        },
-        {
-          "x": 2001,
-          "y": 10
-        },
-        {
-          "x": 2002,
-          "y": 2
-        },
-        {
-          "x": 2003,
-          "y": 11
-        },
-        {
-          "x": 2004,
-          "y": 6
-        }
-      ]
-    },
-    {
-      "id": "Serie 7",
-      "data": [
-        {
-          "x": 2000,
-          "y": 8
-        },
-        {
-          "x": 2001,
+          "x": "subway",
           "y": 1
         },
         {
-          "x": 2002,
-          "y": 10
+          "x": "bus",
+          "y": 146
         },
         {
-          "x": 2003,
-          "y": 12
+          "x": "car",
+          "y": 9
         },
         {
-          "x": 2004,
-          "y": 4
-        }
-      ]
-    },
-    {
-      "id": "Serie 8",
-      "data": [
-        {
-          "x": 2000,
-          "y": 10
+          "x": "moto",
+          "y": 79
         },
         {
-          "x": 2001,
+          "x": "bicycle",
           "y": 6
         },
         {
-          "x": 2002,
-          "y": 1
+          "x": "horse",
+          "y": 37
         },
         {
-          "x": 2003,
-          "y": 7
+          "x": "skateboard",
+          "y": 133
         },
         {
-          "x": 2004,
-          "y": 12
+          "x": "others",
+          "y": 51
         }
       ]
     },
     {
-      "id": "Serie 9",
+      "id": "france",
+      "color": "hsl(182, 70%, 50%)",
       "data": [
         {
-          "x": 2000,
+          "x": "plane",
+          "y": 85
+        },
+        {
+          "x": "helicopter",
+          "y": 253
+        },
+        {
+          "x": "boat",
+          "y": 5
+        },
+        {
+          "x": "train",
           "y": 11
         },
         {
-          "x": 2001,
-          "y": 8
+          "x": "subway",
+          "y": 229
         },
         {
-          "x": 2002,
-          "y": 4
+          "x": "bus",
+          "y": 159
         },
         {
-          "x": 2003,
-          "y": 1
+          "x": "car",
+          "y": 33
         },
         {
-          "x": 2004,
-          "y": 10
+          "x": "moto",
+          "y": 92
+        },
+        {
+          "x": "bicycle",
+          "y": 186
+        },
+        {
+          "x": "horse",
+          "y": 198
+        },
+        {
+          "x": "skateboard",
+          "y": 103
+        },
+        {
+          "x": "others",
+          "y": 173
         }
       ]
     },
     {
-      "id": "Serie 10",
+      "id": "us",
+      "color": "hsl(113, 70%, 50%)",
       "data": [
         {
-          "x": 2000,
-          "y": 12
+          "x": "plane",
+          "y": 295
         },
         {
-          "x": 2001,
+          "x": "helicopter",
           "y": 2
         },
         {
-          "x": 2002,
-          "y": 5
+          "x": "boat",
+          "y": 245
         },
         {
-          "x": 2003,
-          "y": 5
+          "x": "train",
+          "y": 96
         },
         {
-          "x": 2004,
-          "y": 1
-        }
-      ]
-    },
-    {
-      "id": "Serie 11",
-      "data": [
-        {
-          "x": 2000,
-          "y": 9
+          "x": "subway",
+          "y": 153
         },
         {
-          "x": 2001,
-          "y": 9
+          "x": "bus",
+          "y": 98
         },
         {
-          "x": 2002,
-          "y": 7
+          "x": "car",
+          "y": 198
         },
         {
-          "x": 2003,
-          "y": 3
+          "x": "moto",
+          "y": 91
         },
         {
-          "x": 2004,
+          "x": "bicycle",
+          "y": 62
+        },
+        {
+          "x": "horse",
+          "y": 300
+        },
+        {
+          "x": "skateboard",
+          "y": 136
+        },
+        {
+          "x": "others",
           "y": 11
         }
       ]
     },
     {
-      "id": "Serie 12",
+      "id": "germany",
+      "color": "hsl(208, 70%, 50%)",
       "data": [
         {
-          "x": 2000,
-          "y": 1
+          "x": "plane",
+          "y": 267
         },
         {
-          "x": 2001,
-          "y": 4
+          "x": "helicopter",
+          "y": 278
         },
         {
-          "x": 2002,
+          "x": "boat",
+          "y": 269
+        },
+        {
+          "x": "train",
+          "y": 195
+        },
+        {
+          "x": "subway",
+          "y": 172
+        },
+        {
+          "x": "bus",
+          "y": 157
+        },
+        {
+          "x": "car",
           "y": 6
         },
         {
-          "x": 2003,
-          "y": 8
+          "x": "moto",
+          "y": 145
         },
         {
-          "x": 2004,
-          "y": 7
+          "x": "bicycle",
+          "y": 35
+        },
+        {
+          "x": "horse",
+          "y": 32
+        },
+        {
+          "x": "skateboard",
+          "y": 153
+        },
+        {
+          "x": "others",
+          "y": 41
+        }
+      ]
+    },
+    {
+      "id": "norway",
+      "color": "hsl(102, 70%, 50%)",
+      "data": [
+        {
+          "x": "plane",
+          "y": 176
+        },
+        {
+          "x": "helicopter",
+          "y": 177
+        },
+        {
+          "x": "boat",
+          "y": 260
+        },
+        {
+          "x": "train",
+          "y": 115
+        },
+        {
+          "x": "subway",
+          "y": 101
+        },
+        {
+          "x": "bus",
+          "y": 153
+        },
+        {
+          "x": "car",
+          "y": 5
+        },
+        {
+          "x": "moto",
+          "y": 223
+        },
+        {
+          "x": "bicycle",
+          "y": 32
+        },
+        {
+          "x": "horse",
+          "y": 141
+        },
+        {
+          "x": "skateboard",
+          "y": 104
+        },
+        {
+          "x": "others",
+          "y": 289
         }
       ]
     }
