@@ -1,6 +1,6 @@
 # Next.js and Shadcn
 
-<h4>In this project, I utilized Next.js, Tailwind CSS, Shadcn UI & Nivo Bar 🚀</h4>  
+<h4>In this project, I developed a dynamic and responsive web application using Next.js for the framework, Tailwind CSS for modern styling, Shadcn UI for enhanced user interface components, and Nivo Bar for data visualization. These tools allowed for a streamlined, efficient development process and a highly interactive user experience. 🚀</h4>  
 
 [Demo](https://next-shadcn-learn.vercel.app/).\
 Thank you sincerely. 🙏
